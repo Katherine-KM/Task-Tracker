@@ -4,10 +4,14 @@ import './header.css';
 
 // rafce 
 const Header = ({title}) => {
+  const onClick = () => {
+    console.log('Click')
+  }
+  
   return (
     <header className='header'>
         <h1> {title} </h1>
-        <Button textColor='white' bgColor='green' text='Hello' />
+        <Button onClick={onClick} text='Add' />
     </header>
   )
 }
