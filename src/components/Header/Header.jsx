@@ -3,15 +3,16 @@ import Button from '../Button/Button';
 import './header.css';
 
 // rafce 
-const Header = ({title}) => {
-  const onClick = () => {
-    console.log('Click')
-  }
-  
+const Header = ({title, onAdd, showAdd}) => {
+
   return (
     <header className='header'>
         <h1> {title} </h1>
-        <Button onClick={onClick} text='Add' />
+        <Button 
+          text={showAdd ? 'Close' : 'Add'}
+          bgColor={showAdd ? 'red' : 'steelblue'}
+          onClick={onAdd}   
+        />
     </header>
   )
 }
