@@ -42,16 +42,17 @@ function App() {
   }
 
   // Delete Task 
-  const deleteTask = async (id) => {
-    await fetch(`http//localhost:5000/deleteTask/${id}`, {
+  const deleteTask = async (_id) => {
+    await fetch(`http://localhost:5000/deleteTask/${_id}`, {
       method: 'DELETE',
-    })
-    setTasks(tasks.filter((task) => task.id !== id))
+    },
+    setTasks(tasks.filter(x => x._id !== _id))
+    )
   }
 
   // Toggle Reminder
-  const toggleReminder = (id) => {
-    setTasks(tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task))
+  const toggleReminder = (_id) => {
+    setTasks(tasks.map((task) => task._id === _id ? {...task, reminder: !task.reminder} : task))
   }
 
   return (
