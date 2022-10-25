@@ -15,13 +15,13 @@ module.exports={
     },
     createTask: async (req,res) => {
         try {
-            await Task.create({
+            const task = await Task.create({
                 task: req.body.task,
                 day: req.body.day,
                 reminder: 'false',
-            })
+            });
             console.log("Post has been added!");
-            res.redirect("/");
+            res.send(task);
         } catch (err) {
           console.log(err);
         }

@@ -2,16 +2,17 @@ const mongoose = require("mongoose");
 
 
 const TaskSchema = new mongoose.Schema({
-    text: {
+    task: {
         type: String,
-        required: true, 
+        required: true
     },
     day: {
         type: String,
-        required: true,
+        required: true
     },
     reminder: {
         type: Boolean,
+        default: false
     }
 })
 
