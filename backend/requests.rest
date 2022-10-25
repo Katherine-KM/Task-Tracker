@@ -5,3 +5,8 @@ Content-Type: application/json
     "task": "weile",
     "day": "rawr"
 }
+
+###
+
+DELETE http://localhost:5000/deleteTask/63572ca11b085d417c5e8f86
+Content-Type: application/json

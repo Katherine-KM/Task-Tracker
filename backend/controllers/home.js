@@ -26,4 +26,12 @@ module.exports={
           console.log(err);
         }
     },
+    deleteTask: async (req, res) => {
+        try {
+            const deletedTask = await Task.findOneAndDelete({_id: req.params.id})
+            console.log("Deleted Post")
+        } catch(err) {
+            console.log(err);
+        }
+    },
 }
