@@ -18,7 +18,7 @@ module.exports={
             const task = await Task.create({
                 task: req.body.task,
                 day: req.body.day,
-                reminder: 'false',
+                reminder: req.body.reminder,
             });
             console.log("Post has been added!");
             res.send(task);
